@@ -21,5 +21,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
+      - name: Setup Node
+        uses: mbround18/ci-cd-dcoy/.github/actions/setup-node@main
+        with:
+          version: "18"
+
       - name: Deploy
         run: echo "Deploying to ${{ vars.MESSAGE  }}"
