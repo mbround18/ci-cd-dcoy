@@ -22,6 +22,7 @@ jobs:
       - name: Test
         run: echo "Test"
   deploy:
+    needs: [build, test]
     strategy:
       matrix:
         environment: [dev, test, prod]
