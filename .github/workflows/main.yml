@@ -1,0 +1,30 @@
+name: Main Example
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build
+        run: echo "Build"
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Test
+        run: echo "Test"
+  deploy:
+    strategy:
+      matrix:
+        environment: [dev, test, prod]
+    uses: mbround18/ci-cd-dcoy/.github/workflows/deploy.yml@main
+    with:
+      environment: ${{ matrix.environment }}
