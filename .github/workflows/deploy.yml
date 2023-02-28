@@ -1,5 +1,5 @@
 name: Deployer
-run-name: Deployer ${{ input.environment }}
+run-name: Deployer ${{ inputs.environment }}
 
 on:
   workflow_call:
