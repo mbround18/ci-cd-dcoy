@@ -13,7 +13,7 @@ runs:
   steps:
     - # setup node
       name: Setup Node.js ${{ inputs.version }}
-      uses: actions/setup-node@v2
+      uses: actions/setup-node@v3
       with:
         node-version: ${{ inputs.version }}
     - # Update npm
